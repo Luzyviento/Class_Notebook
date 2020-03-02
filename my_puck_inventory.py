@@ -233,13 +233,49 @@ class inventory():
 
 product = product()
 inventory = inventory()
+print('Welcome to tsdscanbot.')
+prod_ent = True
+while prod_ent == True:
+    option = input('Choose option: 1 = add pucks 2 = remove pucks 3 = show inventory')
+    if option == '1':
+        add_another = 0
+        while add_another == 0:
+            puck_add = input('scan barcode')
+            print(puck_add + 'added')
+            product.add(207179, 'OM3_16', 100.78, 1)
+            add_another = input('add another? Press y or n')
+            if add_another == 'n':
+                prod_ent = False
+            else:
+                inventory.showall()
+                continue
+
+    elif option == '2':
+        del_another = 0
+        while del_another == 0:
+            puck_remove = input('scan barcode')
+            print(puck_remove + 'removed')
+            product.remove(207179)
+            del_another = input('remove another? Press y or n')
+            if del_another == 'n':
+                prod_ent = False
+            else:
+                inventory.showall()
+                continue
+
+    elif option == '3':
+        product.add(127456, 'OM3_16', 100.00, 3)
+        product.add(123445, 'A1_20', 90.00, 54)
+        product.add(197556, 'B1_12',110.00, 9)
+        product.add(111324, 'B2_25', 85.95, 26)
+        product.add(33421, 'C1_12', 96.99, 5)
+        product.add(410358, 'Disk1_16', 140.00, 2)
+        product.add(111658, 'D4_12', 112.84, 14)
+        inventory.showall()
+        prod_ent = False
+    else:
+        print('Invalid entry - Please restart program to continue')
 
 
-product.add(127456, 'OM3_16', 100.00, 3)
-product.add(123445, 'A1_20', 90.00, 54)
-product.add(197556, 'B1_12',110.00, 9)
-product.add(111324, 'B2_25', 85.95, 26)
-product.add(33421, 'C1_12', 96.99, 5)
-product.add(410358, 'Disk1_16', 140.00, 2)
-product.add(111658, 'D4_12', 112.84, 14)
-inventory.showall()
+
+#inventory.showall()

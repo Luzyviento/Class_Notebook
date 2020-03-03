@@ -236,14 +236,14 @@ inventory = inventory()
 print('Welcome to tsdscanbot.')
 prod_ent = True
 while prod_ent == True:
-    option = input('Choose option: 1 = add pucks 2 = remove pucks 3 = show inventory')
+    option = input('Choose option: 1 = add pucks 2 = remove pucks 3 = show inventory\n')
     if option == '1':
         add_another = 0
         while add_another == 0:
-            puck_add = input('scan barcode')
-            print(puck_add + 'added')
+            puck_add = input('scan barcode\n')
+            print(puck_add + ' added')
             product.add(207179, 'OM3_16', 100.78, 1)
-            add_another = input('add another? Press y or n')
+            add_another = input('add another? Press y or n\n')
             if add_another == 'n':
                 prod_ent = False
             else:
@@ -253,10 +253,10 @@ while prod_ent == True:
     elif option == '2':
         del_another = 0
         while del_another == 0:
-            puck_remove = input('scan barcode')
+            puck_remove = input('scan barcode\n')
             print(puck_remove + 'removed')
             product.remove(207179)
-            del_another = input('remove another? Press y or n')
+            del_another = input('remove another? Press y or n\n')
             if del_another == 'n':
                 prod_ent = False
             else:

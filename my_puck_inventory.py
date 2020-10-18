@@ -277,5 +277,5 @@ while prod_ent == True:
         print('Invalid entry - Please restart program to continue')
 
 
-
+#Ended up going a different way with a database.
 #inventory.showall()
